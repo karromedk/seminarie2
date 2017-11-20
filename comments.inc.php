@@ -17,18 +17,16 @@ function getComments($conn,$recipe){
 	$result=mysqli_query($conn,$sql);
 	while($row= mysqli_fetch_assoc($result)){
 		echo"<div class='c1'><p>";
-			echo $row['uid']."<br>";
-			echo $row['date']."<br>";
-			echo nl2br($row['message']."<br>");
-			 
+		echo $row['uid']."<br>";
+		echo $row['date']."<br>";
+		echo nl2br($row['message']."<br>");
 			if (isset($_SESSION['user']) and $_SESSION['user'] == $row['uid']) {
 				echo "</p>
 				<form class='delete-form' method='POST' action='".deleteComments($conn)."'>
 				<input type='hidden' name='cid' value='".$row['cid']."'>
 				<button type='submit' name=commentDelete>Delete</button>
-				</form>
-
-			</div>";}
+				</form>";
+			} echo "</div>";
 	}
 
 	}
