@@ -2,7 +2,9 @@
 session_start();
 date_default_timezone_set('Europe/Stockholm');
 include 'dhd.inc.php';
+include 'dbh.php';
 include 'comments.inc.php';
+$recipe= 'meatballs';
 ?>
 <!DOCTYPE html>
 <html>
@@ -49,23 +51,22 @@ Peel the potatoes and cut into pieces. Boil the soft in lightly salted water for
   	<div class=comments>
 
   		<h3> Comments</h3>
-  		<?php
-      if(isset($_SESSION['user'])){
-
-        echo"<form method='POST' action='".setComments($conn)."'>
+      <?php
+      if (isset($_SESSION['user'])) {
+      echo"<form action='comments.inc.php' method='POST'>
         <input type='hidden' name='uid' value='".$_SESSION['user']."'>
          <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
-         <input type='hidden' name='recipe' value='meatballs' />
+          <input type='hidden' name='recipe' value='meatballs' />
       <textarea name='message'>
 Enter text here...</textarea>
 <br>
 <br>
 <button type='submit' name='commentSubmit'>Comment </button>
-</form>";
-}else{
+</form>";}else{
   echo"You can not comment since you are not logged in!";
 }
-getComments($conn, "meatballs");
+include('getcomments.php');
+
 ?>
   	</div>
   </section>
