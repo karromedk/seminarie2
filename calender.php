@@ -45,7 +45,7 @@ session_start();
   <li>9</li>
   <li><span class="active">10</span></li>
   <li>11</li>
-  <li>12 <a href="meatballs.html"><img src="meatballs2.jpg" alt= "meat" style="width:80%; height:80%;"/></a></li>
+  <li>12 <a href="meatballs.php"><img src="meatballs2.jpg" alt= "meat" style="width:80%; height:80%;"/></a></li>
   <li>13</li>
   <li>14</li>
   <li>15</li>
@@ -56,7 +56,7 @@ session_start();
   <li>20</li>
   <li>21</li>
   <li>22</li>
-  <li>23 <a href="panncakes.html"><img src="pannkakor.jpg" alt= pankis style="width:80%; height:80%;"/></a></li>
+  <li>23 <a href="panncakes.php"><img src="pannkakor.jpg" alt= pankis style="width:80%; height:80%;"/></a></li>
   <li>24</li>
   <li>25</li>
   <li>26</li>
